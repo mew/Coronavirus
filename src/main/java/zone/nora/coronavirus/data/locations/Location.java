@@ -48,7 +48,7 @@ public class Location {
     private String countryCode;
 
     @SerializedName("history")
-    private HashMap<String, String> history;
+    private HashMap<String, Integer> history;
 
     @SerializedName("latest")
     private int latest;
@@ -68,7 +68,7 @@ public class Location {
         return countryCode;
     }
 
-    public HashMap<String, String> getHistory() {
+    public HashMap<String, Integer> getHistory() {
         return history;
     }
 

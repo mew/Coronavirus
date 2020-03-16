@@ -1,5 +1,5 @@
 # Coronavirus
-Java API Wrapper for getting real-time Coronavirus (2019-nCoV) statistics via https://git.io/Jvoep.
+Java API Wrapper for getting real-time Coronavirus (COVID-19, SARS-CoV-2) statistics via https://git.io/Jvoep.
 
 ## Example
 ```java

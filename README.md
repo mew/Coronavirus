@@ -17,4 +17,4 @@ public static void main(String[] args) throws IOException {
 ```
 
 ## Installation
-You can add the project to your library via [Jitpack](https://jitpack.io/#mew/coronavirus).
+You can add the library to your project via [Jitpack](https://jitpack.io/#mew/coronavirus).

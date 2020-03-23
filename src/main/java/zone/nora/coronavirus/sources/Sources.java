@@ -30,38 +30,22 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package zone.nora.coronavirus.data.all;
+package zone.nora.coronavirus.sources;
 
-import com.google.gson.annotations.SerializedName;
-import zone.nora.coronavirus.data.CoronavirusData;
-import zone.nora.coronavirus.data.latest.LatestData;
+/**
+ * Different sources that can be used when getting COVID data.
+ * See: https://github.com/ExpDev07/coronavirus-tracker-api#available-sources
+ */
+public class Sources {
+    /**
+     * Data repository operated by the Johns Hopkins University Center for Systems Science and Engineering (JHU CSSE).
+     * https://github.com/CSSEGISandData/COVID-19
+     */
+    public static final String JHU = "jhu";
 
-public class AllCoronavirusData {
-    @SerializedName("confirmed")
-    private CoronavirusData confirmed;
-
-    @SerializedName("deaths")
-    private CoronavirusData deaths;
-
-    @SerializedName("latest")
-    private LatestData latest;
-
-    @SerializedName("recovered")
-    private CoronavirusData recovered;
-
-    public LatestData getLatest() {
-        return latest;
-    }
-
-    public CoronavirusData getConfirmed() {
-        return confirmed;
-    }
-
-    public CoronavirusData getDeaths() {
-        return deaths;
-    }
-
-    public CoronavirusData getRecovered() {
-        return recovered;
-    }
+    /**
+     * U.S. County data that comes from the Conference of State Bank Supervisors.
+     * https://www.csbs.org/information-covid-19-coronavirus
+     */
+    public static final String CSBS = "csbs";
 }

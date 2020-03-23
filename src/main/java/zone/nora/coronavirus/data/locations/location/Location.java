@@ -30,29 +30,61 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package zone.nora.coronavirus.data.latest;
+package zone.nora.coronavirus.data.locations.location;
 
 import com.google.gson.annotations.SerializedName;
+import zone.nora.coronavirus.data.latest.Latest;
+import zone.nora.coronavirus.data.locations.location.coordinates.Coordinates;
 
-public class LatestData {
-    @SerializedName("confirmed")
-    private int confirmed;
+public class Location {
+    @SerializedName("coordinates")
+    private Coordinates coordinates;
 
-    @SerializedName("deaths")
-    private int deaths;
+    @SerializedName("id")
+    private int id;
 
-    @SerializedName("recovered")
-    private int recovered;
+    @SerializedName("country")
+    private String country;
 
-    public int getConfirmed() {
-        return confirmed;
+    @SerializedName("country_code")
+    private String countryCode;
+
+    @SerializedName("last_updated")
+    private String lastUpdated;
+
+    @SerializedName("latest")
+    private Latest latest;
+
+    @SerializedName("province")
+    private String province;
+
+    // TODO support timelines.
+
+    public Coordinates getCoordinates() {
+        return coordinates;
     }
 
-    public int getDeaths() {
-        return deaths;
+    public Latest getLatest() {
+        return latest;
     }
 
-    public int getRecovered() {
-        return recovered;
+    public int getId() {
+        return id;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public String getCountryCode() {
+        return countryCode;
+    }
+
+    public String getLastUpdated() {
+        return lastUpdated;
+    }
+
+    public String getProvince() {
+        return province;
     }
 }

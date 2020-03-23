@@ -31,32 +31,35 @@
  */
 
 import zone.nora.coronavirus.Coronavirus;
-import zone.nora.coronavirus.data.CoronavirusData;
-import zone.nora.coronavirus.data.latest.LatestData;
-import zone.nora.coronavirus.data.locations.Location;
+import zone.nora.coronavirus.data.latest.Latest;
+import zone.nora.coronavirus.sources.Sources;
 
 import java.io.IOException;
 
 public class Example {
     public static void main(String[] args) throws IOException {
-        // Instance of the API.
+        // Create an instance of the API.
         Coronavirus coronavirus = new Coronavirus();
         // Get latest data.
-        LatestData latest = coronavirus.getLatestData();
+        Latest latest = coronavirus.getLatest();
 
-        System.out.println("-----------------");
-        System.out.println("Latest Coronavirus Data:");
         System.out.println("Confirmed Cases: " + latest.getConfirmed());
-        System.out.println("Deaths: " + latest.getDeaths());
-        System.out.println("Recovered: " + latest.getRecovered());
-        System.out.println("-----------------");
 
-        // Get complete data of confirmed cases.
-        CoronavirusData confirmedStatistics = coronavirus.getConfirmed();
+        // Get data for everywhere:
+        coronavirus.getLocations().forEach(location -> {
+            System.out.println(location.getProvince() + ": " + location.getLatest().getConfirmed());
+        });
 
-        System.out.println("Places with confirmed cases:");
-        for (Location location : confirmedStatistics.getLocations()) {
-            System.out.println(location.getProvince() + ", " + location.getCountryCode() + " (" + location.getLatest() + " cases)");
-        }
+        // Get data for a country:
+        Latest latestBelgium = coronavirus.getLocationsByCountryCode("BE").getLatest();
+        System.out.println("Confirmed cases in Belgium: " + latestBelgium.getConfirmed());
+
+        // Get data for a province:
+        Latest latestOntario = coronavirus.getLocationsByProvince("Ontario").getLatest();
+        System.out.println("Deaths in Ontario: " + latestOntario.getDeaths());
+
+        // Get data via a different source:
+        Latest latestCSBS = coronavirus.getLatest(Sources.CSBS);
+        System.out.println("Confirmed cases according to CSBS: " + latestCSBS.getConfirmed());
     }
 }

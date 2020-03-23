@@ -30,22 +30,29 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package zone.nora.coronavirus.data.locations.coordinates;
+package zone.nora.coronavirus.data.latest;
 
 import com.google.gson.annotations.SerializedName;
 
-public class Coordinates {
-    @SerializedName("lat")
-    private String lat;
+public class Latest {
+    @SerializedName("confirmed")
+    private int confirmed;
 
-    @SerializedName("long")
-    private String long_; // "long" is a Java keyword :(
+    @SerializedName("deaths")
+    private int deaths;
 
-    public String getLat() {
-        return lat;
+    @SerializedName("recovered")
+    private int recovered;
+
+    public int getConfirmed() {
+        return confirmed;
     }
 
-    public String getLong() {
-        return long_;
+    public int getDeaths() {
+        return deaths;
+    }
+
+    public int getRecovered() {
+        return recovered;
     }
 }

@@ -30,53 +30,14 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package zone.nora.coronavirus.data.locations;
+package zone.nora.coronavirus.data.locations.location.coordinates;
 
 import com.google.gson.annotations.SerializedName;
-import zone.nora.coronavirus.data.locations.coordinates.Coordinates;
 
-import java.util.HashMap;
+public class Coordinates {
+    @SerializedName("latitude")
+    private String latitude;
 
-public class Location {
-    @SerializedName("coordinates")
-    private Coordinates coordinates;
-
-    @SerializedName("country")
-    private String country;
-
-    @SerializedName("country_code")
-    private String countryCode;
-
-    @SerializedName("history")
-    private HashMap<String, Integer> history;
-
-    @SerializedName("latest")
-    private int latest;
-
-    @SerializedName("province")
-    private String province;
-
-    public Coordinates getCoordinates() {
-        return coordinates;
-    }
-
-    public String getCountry() {
-        return country;
-    }
-
-    public String getCountryCode() {
-        return countryCode;
-    }
-
-    public HashMap<String, Integer> getHistory() {
-        return history;
-    }
-
-    public int getLatest() {
-        return latest;
-    }
-
-    public String getProvince() {
-        return province;
-    }
+    @SerializedName("longitude")
+    private String longitude;
 }

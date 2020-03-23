@@ -30,39 +30,26 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package zone.nora.coronavirus.data;
+package zone.nora.coronavirus.data.locations;
 
 import com.google.gson.annotations.SerializedName;
-import zone.nora.coronavirus.data.locations.Location;
+import zone.nora.coronavirus.data.latest.Latest;
+import zone.nora.coronavirus.data.locations.location.Location;
 
 import java.util.ArrayList;
 
-public class CoronavirusData {
-    @SerializedName("last_updated")
-    private String lastUpdated;
-
+public class Locations {
     @SerializedName("latest")
-    private int latest;
+    private Latest latest;
 
     @SerializedName("locations")
     private ArrayList<Location> locations;
 
-    @SerializedName("source")
-    private String source;
-
-    public int getLatest() {
+    public Latest getLatest() {
         return latest;
     }
 
     public ArrayList<Location> getLocations() {
         return locations;
-    }
-
-    public String getLastUpdated() {
-        return lastUpdated;
-    }
-
-    public String getSource() {
-        return source;
     }
 }

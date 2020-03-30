@@ -16,6 +16,8 @@ class Main {
         // Create an instance of the API.
         Coronavirus coronavirus = new Coronavirus();
         // Get latest data.
+        Latest latest = coronavirus.getLatest();
+        
         System.out.println("Latest Coronavirus Data:");
         System.out.println("Confirmed Cases: " + latest.getConfirmed());
         System.out.println("Deaths: " + latest.getDeaths());

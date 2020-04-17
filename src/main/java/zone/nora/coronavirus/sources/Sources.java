@@ -48,4 +48,10 @@ public class Sources {
      * https://www.csbs.org/information-covid-19-coronavirus
      */
     public static final String CSBS = "csbs";
+
+    /**
+     * The New York Times is releasing a series of data files with cumulative counts of coronavirus cases in the United States.
+     * https://github.com/nytimes/covid-19-data
+     */
+    public static final String NYT = "nyt";
 }

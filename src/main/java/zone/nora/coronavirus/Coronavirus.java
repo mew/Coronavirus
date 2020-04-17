@@ -139,9 +139,7 @@ public class Coronavirus {
     private static ArrayList<Location> getLocationsList(String endpoint) throws IOException {
         JsonArray jsonArray = getCoronaJson(endpoint).getAsJsonArray("locations");
         ArrayList<Location> locations = new ArrayList<>();
-        jsonArray.forEach(jsonElement -> {
-            locations.add(gson.fromJson(jsonElement, Location.class));
-        });
+        jsonArray.forEach(jsonElement -> locations.add(gson.fromJson(jsonElement, Location.class)));
         return locations;
     }
 

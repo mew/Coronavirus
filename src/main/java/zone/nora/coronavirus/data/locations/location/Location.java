@@ -58,6 +58,12 @@ public class Location {
     @SerializedName("province")
     private String province;
 
+    @SerializedName("state")
+    private String state;
+
+    @SerializedName("county")
+    private String county;
+
     // TODO support timelines.
 
     public Coordinates getCoordinates() {
